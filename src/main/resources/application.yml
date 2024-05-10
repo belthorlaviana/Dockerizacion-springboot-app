@@ -1,0 +1,29 @@
+
+#configuracion para el acceso a base de datos
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+  datasource:
+    url: ${DB_URL}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${DB_USER_NAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: app_prueba
+server:
+  port: 8080     
+endpoints:
+  userController:
+    getUserByNif:  getUserByNif  
+    insertUser:  insertUser  
+    getUserByNameAndLastName: getUserByNameAndLastName
+    updateUser: updateUser
+
+ 
